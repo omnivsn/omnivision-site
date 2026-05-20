@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <clipPath id="gc">
+      <circle cx="50" cy="50" r="43"/>
+    </clipPath>
+  </defs>
+
+  <!-- Globe base -->
+  <circle cx="50" cy="50" r="43" fill="#3a82e8"/>
+
+  <!-- Landmasses & eye, clipped to globe -->
+  <g clip-path="url(#gc)">
+    <!-- green landmass patches -->
+    <path d="M18,8 Q28,4 38,10 Q34,20 24,22 Q14,18 18,8Z" fill="#33cc5a" stroke="#111" stroke-width="2.2" stroke-linejoin="round"/>
+    <path d="M50,5 Q62,2 70,12 Q66,20 58,18 Q48,16 50,5Z" fill="#33cc5a" stroke="#111" stroke-width="2.2" stroke-linejoin="round"/>
+    <path d="M74,16 Q84,14 90,24 Q86,32 78,28 Q70,24 74,16Z" fill="#33cc5a" stroke="#111" stroke-width="2.2" stroke-linejoin="round"/>
+    <path d="M4,36 Q10,28 18,34 Q18,46 10,48 Q2,44 4,36Z" fill="#33cc5a" stroke="#111" stroke-width="2.2" stroke-linejoin="round"/>
+    <path d="M80,30 Q90,28 96,40 Q94,52 86,50 Q78,46 80,30Z" fill="#33cc5a" stroke="#111" stroke-width="2.2" stroke-linejoin="round"/>
+    <path d="M8,64 Q18,58 26,66 Q24,76 14,80 Q6,76 8,64Z" fill="#33cc5a" stroke="#111" stroke-width="2.2" stroke-linejoin="round"/>
+    <path d="M68,72 Q78,68 88,76 Q86,86 76,90 Q66,86 68,72Z" fill="#33cc5a" stroke="#111" stroke-width="2.2" stroke-linejoin="round"/>
+    <path d="M36,82 Q46,80 52,88 Q48,96 38,96 Q30,92 36,82Z" fill="#33cc5a" stroke="#111" stroke-width="2.2" stroke-linejoin="round"/>
+
+    <!-- eye white — left teardrop -->
+    <path d="M4,50 Q22,30 50,50 Q22,70 4,50Z" fill="white"/>
+    <!-- eye white — right teardrop -->
+    <path d="M96,50 Q78,30 50,50 Q78,70 96,50Z" fill="white"/>
+
+    <!-- iris -->
+    <circle cx="50" cy="50" r="17" fill="#33cc5a"/>
+    <!-- iris inner ring -->
+    <circle cx="50" cy="50" r="12" fill="#28b84e"/>
+
+    <!-- vertical slit pupil -->
+    <ellipse cx="50" cy="50" rx="5.5" ry="16" fill="#0a0a0a"/>
+
+    <!-- iris catchlight -->
+    <ellipse cx="45" cy="44" rx="3.5" ry="2.5" fill="rgba(255,255,255,0.38)"/>
+  </g>
+
+  <!-- Globe outline -->
+  <circle cx="50" cy="50" r="43" fill="none" stroke="#0a0a0a" stroke-width="4.5"/>
+
+  <!-- Upper eyelid -->
+  <path d="M4,50 Q50,20 96,50" fill="none" stroke="#0a0a0a" stroke-width="3.8" stroke-linecap="round"/>
+  <!-- Lower eyelid -->
+  <path d="M4,50 Q50,80 96,50" fill="none" stroke="#0a0a0a" stroke-width="3.8" stroke-linecap="round"/>
+
+  <!-- Eye corner tear-duct dots -->
+  <circle cx="4"  cy="50" r="2.5" fill="#0a0a0a"/>
+  <circle cx="96" cy="50" r="2.5" fill="#0a0a0a"/>
+
+  <!-- Iris outline -->
+  <circle cx="50" cy="50" r="17" fill="none" stroke="#0a0a0a" stroke-width="2.5"/>
+  <!-- Pupil outline -->
+  <ellipse cx="50" cy="50" rx="5.5" ry="16" fill="none" stroke="#0a0a0a" stroke-width="1.5"/>
+</svg>
