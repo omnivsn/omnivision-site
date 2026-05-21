@@ -835,12 +835,12 @@
       z-index: 4;
     }
 
-    /* iridescent outer ring via conic gradient */
-    .cd-1 { background: conic-gradient(from 0deg, #1e6fff, #0dff6e, #7b2fff, #ff6b35, #1e6fff); }
-    .cd-2 { background: conic-gradient(from 90deg, #0dff6e, #1e6fff, #ffdd00, #0dff6e, #00e5ff, #0dff6e); }
-    .cd-3 { background: conic-gradient(from 180deg, #9b30ff, #1e6fff, #0dff6e, #ff3090, #9b30ff); }
-    .cd-4 { background: conic-gradient(from 270deg, #ff9500, #1e6fff, #0dff6e, #ff3030, #ff9500); }
-    .cd-5 { background: conic-gradient(from 45deg, #ff3090, #0dff6e, #1e6fff, #ffdd00, #ff3090); }
+    /* plain silver CD base — all discs share the same metallic look */
+    .cd-1, .cd-2, .cd-3, .cd-4, .cd-5 {
+      background:
+        radial-gradient(circle at 38% 32%, rgba(255,255,255,0.5) 0%, transparent 28%),
+        radial-gradient(circle, #f0f0f0 0%, #d8d8d8 25%, #b8b8b8 55%, #c8c8c8 75%, #d4d4d4 100%);
+    }
 
     /* glossy shine overlay */
     .cd::before {
@@ -855,55 +855,64 @@
       z-index: 2;
     }
 
-    /* per-CD label colors */
-    .cd-1 .cd-label { background: radial-gradient(circle, #0d1a3a 60%, #0a2a18); }
-    .cd-2 .cd-label { background: radial-gradient(circle, #061a0d 60%, #0a0a2a); }
-    .cd-3 .cd-label { background: radial-gradient(circle, #1a0a2a 60%, #0a1a2a); }
-    .cd-4 .cd-label { background: radial-gradient(circle, #1a0800 60%, #0a0a1a); }
-    .cd-5 .cd-label { background: radial-gradient(circle, #1a001a 60%, #0a1a0a); }
-
-    .cd-marker-name {
-      font-family: 'Caveat', cursive;
-      font-weight: 700;
-      font-size: 0.7rem;
-      display: block;
-      line-height: 1;
-      text-align: center;
+    /* printed paper label — same for all CDs */
+    .cd-1 .cd-label, .cd-2 .cd-label, .cd-3 .cd-label,
+    .cd-4 .cd-label, .cd-5 .cd-label {
+      background: #f4f0e4;
+      border: 0.5px solid #ccc;
     }
 
-    .cd-stamp-circle {
+    /* sticker base */
+    .cd-sticker {
+      position: absolute;
+      z-index: 2;
       font-family: 'Caveat', cursive;
-      font-size: 0.28rem;
       font-weight: 700;
-      border-radius: 50%;
-      border: 0.8px solid currentColor;
-      padding: 2px 3px;
-      text-align: center;
-      line-height: 1.3;
-      opacity: 0.8;
-    }
-
-    .cd-sticker-box {
-      font-family: 'Caveat', cursive;
       font-size: 0.3rem;
-      font-weight: 700;
-      border: 0.8px solid currentColor;
-      padding: 1px 4px;
+      line-height: 1.3;
       text-align: center;
-      letter-spacing: 0.06em;
-      opacity: 0.8;
+      padding: 1.5px 4px;
+      border-radius: 2px;
     }
 
-    .cd-1 .cd-marker-name { color: var(--green); }
-    .cd-1 .cd-stamp-circle { color: var(--green); }
-    .cd-2 .cd-marker-name { color: #7dd4fc; }
-    .cd-2 .cd-sticker-box { color: #7dd4fc; }
-    .cd-3 .cd-marker-name { color: #bf7fff; }
-    .cd-3 .cd-stamp-circle { color: #bf7fff; }
-    .cd-4 .cd-marker-name { color: #ff9500; }
-    .cd-4 .cd-sticker-box { color: #ff9500; }
-    .cd-5 .cd-marker-name { color: #ff3090; }
-    .cd-5 .cd-stamp-circle { color: #ff3090; }
+    /* Otuwa stickers */
+    .cd-1 .cd-sticker-a { background: #0dff6e; color: #000; top: 11%; left: 54%; transform: rotate(-5deg); }
+    .cd-1 .cd-sticker-b { background: transparent; color: #0dff6e; border: 0.8px solid #0dff6e; top: 63%; left: 12%; transform: rotate(8deg); font-size: 0.24rem; }
+
+    /* DRA!S stickers */
+    .cd-2 .cd-sticker-a { background: #1e6fff; color: #fff; top: 14%; left: 13%; transform: rotate(6deg); }
+    .cd-2 .cd-sticker-b { background: transparent; color: #7dd4fc; border: 0.8px solid #7dd4fc; top: 60%; left: 57%; transform: rotate(-4deg); border-radius: 50%; padding: 2px 3px; }
+
+    /* Double M stickers */
+    .cd-3 .cd-sticker-a { background: #9b30ff; color: #fff; top: 10%; left: 50%; transform: rotate(-8deg); }
+    .cd-3 .cd-sticker-b { background: transparent; color: #bf7fff; border: 0.8px solid #bf7fff; top: 60%; left: 11%; transform: rotate(5deg); }
+
+    /* Runnit stickers */
+    .cd-4 .cd-sticker-a { background: #ff9500; color: #000; top: 12%; left: 11%; transform: rotate(7deg); }
+    .cd-4 .cd-sticker-b { background: #ff3030; color: #fff; top: 57%; left: 55%; transform: rotate(-6deg); border-radius: 50%; padding: 2px 3px; }
+
+    /* ALV!N stickers */
+    .cd-5 .cd-sticker-a { background: #ff3090; color: #fff; top: 11%; left: 52%; transform: rotate(-4deg); }
+    .cd-5 .cd-sticker-b { background: transparent; color: #ff3090; border: 0.8px solid #ff3090; top: 62%; left: 12%; transform: rotate(6deg); }
+
+    .cd-printed-title {
+      font-family: 'Alfa Slab One', serif;
+      font-size: 0.5rem;
+      text-align: center;
+      line-height: 1;
+      color: #111;
+      margin-bottom: 2px;
+    }
+
+    .cd-printed-brand {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.25rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #666;
+      text-align: center;
+    }
 
     /* subtle grooves ring */
     .cd-grooves {
@@ -2281,9 +2290,11 @@
         <div class="member-art">
           <div class="cd cd-1">
             <div class="cd-grooves"></div>
+            <div class="cd-sticker cd-sticker-a">THE LEADER</div>
+            <div class="cd-sticker cd-sticker-b">✦ introspective</div>
             <div class="cd-label">
-              <span class="cd-marker-name" style="transform:rotate(-4deg)">Otuwa</span>
-              <span class="cd-stamp-circle">THE<br>LEADER</span>
+              <p class="cd-printed-title">Otuwa</p>
+              <p class="cd-printed-brand">omniVision</p>
             </div>
             <div class="cd-hole"></div>
           </div>
@@ -2298,9 +2309,11 @@
         <div class="member-art">
           <div class="cd cd-2">
             <div class="cd-grooves"></div>
+            <div class="cd-sticker cd-sticker-a">FREE ♥</div>
+            <div class="cd-sticker cd-sticker-b">THE HEART</div>
             <div class="cd-label">
-              <span class="cd-marker-name" style="transform:rotate(5deg)">DRA!S</span>
-              <span class="cd-sticker-box">FREE ♥</span>
+              <p class="cd-printed-title">DRA!S</p>
+              <p class="cd-printed-brand">omniVision</p>
             </div>
             <div class="cd-hole"></div>
           </div>
@@ -2315,9 +2328,11 @@
         <div class="member-art">
           <div class="cd cd-3">
             <div class="cd-grooves"></div>
+            <div class="cd-sticker cd-sticker-a">DREAM ★</div>
+            <div class="cd-sticker cd-sticker-b">psychedelic</div>
             <div class="cd-label">
-              <span class="cd-marker-name" style="transform:rotate(-6deg);font-size:0.58rem">Double<br>M</span>
-              <span class="cd-stamp-circle">DREAM<br>★</span>
+              <p class="cd-printed-title">Double M</p>
+              <p class="cd-printed-brand">omniVision</p>
             </div>
             <div class="cd-hole"></div>
           </div>
@@ -2332,9 +2347,11 @@
         <div class="member-art">
           <div class="cd cd-4">
             <div class="cd-grooves"></div>
+            <div class="cd-sticker cd-sticker-a">RENEGADE</div>
+            <div class="cd-sticker cd-sticker-b">NO RULES</div>
             <div class="cd-label">
-              <span class="cd-marker-name" style="transform:rotate(-8deg)">Runnit</span>
-              <span class="cd-sticker-box" style="border-style:double;padding:2px 4px">RENEGADE</span>
+              <p class="cd-printed-title">Runnit</p>
+              <p class="cd-printed-brand">omniVision</p>
             </div>
             <div class="cd-hole"></div>
           </div>
@@ -2349,9 +2366,11 @@
         <div class="member-art">
           <div class="cd cd-5">
             <div class="cd-grooves"></div>
+            <div class="cd-sticker cd-sticker-a">THE WORD</div>
+            <div class="cd-sticker cd-sticker-b">ON SIGHT ⚡</div>
             <div class="cd-label">
-              <span class="cd-marker-name" style="transform:rotate(3deg)">ALV!N</span>
-              <span class="cd-stamp-circle">THE<br>WORD</span>
+              <p class="cd-printed-title">ALV!N</p>
+              <p class="cd-printed-brand">omniVision</p>
             </div>
             <div class="cd-hole"></div>
           </div>
