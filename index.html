@@ -7,7 +7,7 @@
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Oswald:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Caveat:wght@400;700&family=Oswald:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -862,29 +862,48 @@
     .cd-4 .cd-label { background: radial-gradient(circle, #1a0800 60%, #0a0a1a); }
     .cd-5 .cd-label { background: radial-gradient(circle, #1a001a 60%, #0a1a0a); }
 
-    .cd-label-title {
-      font-family: 'Alfa Slab One', serif;
-      font-size: 0.55rem;
-      letter-spacing: 0.1em;
-      text-align: center;
-      line-height: 1.2;
-    }
-
-    .cd-1 .cd-label-title { color: var(--green); }
-    .cd-2 .cd-label-title { color: var(--blue); }
-    .cd-3 .cd-label-title { color: #bf7fff; }
-    .cd-4 .cd-label-title { color: #ff9500; }
-    .cd-5 .cd-label-title { color: #ff3090; }
-
-    .cd-label-sub {
-      font-family: 'Oswald', sans-serif;
-      font-size: 0.38rem;
+    .cd-marker-name {
+      font-family: 'Caveat', cursive;
       font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
+      font-size: 0.7rem;
+      display: block;
+      line-height: 1;
       text-align: center;
     }
+
+    .cd-stamp-circle {
+      font-family: 'Caveat', cursive;
+      font-size: 0.28rem;
+      font-weight: 700;
+      border-radius: 50%;
+      border: 0.8px solid currentColor;
+      padding: 2px 3px;
+      text-align: center;
+      line-height: 1.3;
+      opacity: 0.8;
+    }
+
+    .cd-sticker-box {
+      font-family: 'Caveat', cursive;
+      font-size: 0.3rem;
+      font-weight: 700;
+      border: 0.8px solid currentColor;
+      padding: 1px 4px;
+      text-align: center;
+      letter-spacing: 0.06em;
+      opacity: 0.8;
+    }
+
+    .cd-1 .cd-marker-name { color: var(--green); }
+    .cd-1 .cd-stamp-circle { color: var(--green); }
+    .cd-2 .cd-marker-name { color: #7dd4fc; }
+    .cd-2 .cd-sticker-box { color: #7dd4fc; }
+    .cd-3 .cd-marker-name { color: #bf7fff; }
+    .cd-3 .cd-stamp-circle { color: #bf7fff; }
+    .cd-4 .cd-marker-name { color: #ff9500; }
+    .cd-4 .cd-sticker-box { color: #ff9500; }
+    .cd-5 .cd-marker-name { color: #ff3090; }
+    .cd-5 .cd-stamp-circle { color: #ff3090; }
 
     /* subtle grooves ring */
     .cd-grooves {
@@ -2263,8 +2282,8 @@
           <div class="cd cd-1">
             <div class="cd-grooves"></div>
             <div class="cd-label">
-              <p class="cd-label-title">omni<br>Vision</p>
-              <p class="cd-label-sub">OTUWA</p>
+              <span class="cd-marker-name" style="transform:rotate(-4deg)">Otuwa</span>
+              <span class="cd-stamp-circle">THE<br>LEADER</span>
             </div>
             <div class="cd-hole"></div>
           </div>
@@ -2280,8 +2299,8 @@
           <div class="cd cd-2">
             <div class="cd-grooves"></div>
             <div class="cd-label">
-              <p class="cd-label-title">omni<br>Vision</p>
-              <p class="cd-label-sub">DRA!S</p>
+              <span class="cd-marker-name" style="transform:rotate(5deg)">DRA!S</span>
+              <span class="cd-sticker-box">FREE ♥</span>
             </div>
             <div class="cd-hole"></div>
           </div>
@@ -2297,8 +2316,8 @@
           <div class="cd cd-3">
             <div class="cd-grooves"></div>
             <div class="cd-label">
-              <p class="cd-label-title">omni<br>Vision</p>
-              <p class="cd-label-sub">DOUBLE M</p>
+              <span class="cd-marker-name" style="transform:rotate(-6deg);font-size:0.58rem">Double<br>M</span>
+              <span class="cd-stamp-circle">DREAM<br>★</span>
             </div>
             <div class="cd-hole"></div>
           </div>
@@ -2314,8 +2333,8 @@
           <div class="cd cd-4">
             <div class="cd-grooves"></div>
             <div class="cd-label">
-              <p class="cd-label-title">omni<br>Vision</p>
-              <p class="cd-label-sub">RUNNIT</p>
+              <span class="cd-marker-name" style="transform:rotate(-8deg)">Runnit</span>
+              <span class="cd-sticker-box" style="border-style:double;padding:2px 4px">RENEGADE</span>
             </div>
             <div class="cd-hole"></div>
           </div>
@@ -2331,8 +2350,8 @@
           <div class="cd cd-5">
             <div class="cd-grooves"></div>
             <div class="cd-label">
-              <p class="cd-label-title">omni<br>Vision</p>
-              <p class="cd-label-sub">ALV!N</p>
+              <span class="cd-marker-name" style="transform:rotate(3deg)">ALV!N</span>
+              <span class="cd-stamp-circle">THE<br>WORD</span>
             </div>
             <div class="cd-hole"></div>
           </div>
