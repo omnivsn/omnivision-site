@@ -1,0 +1,56 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "general"
+        label: "General"
+        file: "data/settings.json"
+        fields:
+          - { label: "Hero Eyebrow", name: "hero_eyebrow", widget: "string" }
+          - { label: "Hero Tagline", name: "hero_tagline", widget: "string" }
+          - { label: "Pull Quote", name: "pull_quote", widget: "string" }
+          - { label: "Booking Email", name: "booking_email", widget: "string" }
+          - { label: "Patreon URL", name: "patreon_url", widget: "string" }
+          - { label: "Instagram URL", name: "instagram_url", widget: "string" }
+          - { label: "TikTok URL", name: "tiktok_url", widget: "string" }
+          - { label: "YouTube URL", name: "youtube_url", widget: "string" }
+          - { label: "Spotify URL", name: "spotify_url", widget: "string" }
+
+  - name: "members"
+    label: "Members"
+    folder: "data/members"
+    create: true
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Spotify URL", name: "spotify_url", widget: "string" }
+      - { label: "Instagram URL", name: "instagram_url", widget: "string" }
+
+  - name: "releases"
+    label: "Music Releases"
+    folder: "data/releases"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Artist", name: "artist", widget: "string" }
+      - { label: "Year", name: "year", widget: "string" }
+      - { label: "Spotify URL", name: "spotify_url", widget: "string" }
+      - { label: "Apple Music URL", name: "apple_url", widget: "string" }
+      - { label: "Cover Image", name: "cover", widget: "image", required: false }
+
+  - name: "merch"
+    label: "Stash Items"
+    folder: "data/merch"
+    create: true
+    fields:
+      - { label: "Item Name", name: "name", widget: "string" }
+      - { label: "Price", name: "price", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Shop URL", name: "shop_url", widget: "string" }
+      - { label: "Tag", name: "tag", widget: "string" }
